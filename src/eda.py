@@ -30,8 +30,10 @@ def perform_eda(data):
     plt.suptitle("Histograms of Numerical Features")
     plt.show()
 
+    school_map = {0: 'GP', 1: 'MS'}
+    data['school'] = data['school'].map(school_map)
+
     # Barplot for categorical variables (e.g., school vs. G3)
     sns.barplot(x='school', y='G3', data=data)
     plt.title("Average Final Grade by School")
     plt.show()
-
