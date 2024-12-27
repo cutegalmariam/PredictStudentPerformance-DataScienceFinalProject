@@ -21,6 +21,9 @@ def perform_eda(data):
     plt.show()
 
     # Boxplot: G3 by Gender
+
+    gender_map = {0: 'female', 1: 'male'}
+    data['sex'] = data['sex'].map(gender_map)
     sns.boxplot(x='sex', y='G3', data=data)
     plt.title("Comparison of G3 by Gender")
     plt.show()
